@@ -11,7 +11,10 @@
   ],
   "autoload": {
     "psr-4": {
-      "Database\\": "database/"
+      "App\\": "app/",
+      "Database\\": "database/",
+      "Router\\": "router/",
+      "Resources\\": "resources/"
     }
   },
   "require": {}

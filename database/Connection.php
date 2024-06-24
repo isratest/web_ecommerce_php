@@ -21,6 +21,7 @@ class Connection {
             //here make a call self class (Connection)
             self::$instance = new self();
         }
+        return self::$instance;
     }
     // getter of private var connection.
     public function get_database_instance(){
@@ -32,7 +33,7 @@ class Connection {
         // Auth database 
 
         $server = "localhost";
-        $database = ""; // make a db to fill this.
+        $database = "web_ecommerce_php"; // make a db to fill this.
         $username = "root";
         $password = "";
         
