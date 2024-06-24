@@ -1,0 +1,18 @@
+{
+  "name": "israelfericgodoy/web_ecommerce_php",
+  "description": "This project, its to apply all knowleges with php.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "isratest",
+      "email": "israelferic@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Database\\": "database/"
+    }
+  },
+  "require": {}
+}
