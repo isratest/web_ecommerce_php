@@ -5,7 +5,8 @@ require("../vendor/autoload.php");
 
 // here make all calls and use routes.
 
-use Router\RouterHandler;
+use App\Controllers\UsersController;
+use Router\RouteHandler;
 
 $slug = $_GET["slug"] ?? "";
 $slug = explode("/", $slug);
@@ -14,15 +15,18 @@ $resource = $slug[0] == "" ? "/" : $slug[0];
 $id = $slug[1] ?? null;
 
 //Make instance router:
-$router = new RouterHandler();
+$router = new RouteHandler();
 
-switch ($router) {
-    case "/":
-        echo "This is Front Page.";
+switch ($resource) {
+    case '/':
+        require("../resources/views/index.php");
         break;
 
-    case "dashboard":
-        echo "This is Dashboard.";
+    case 'dashboard':
+        $method = $_POST["method"] ?? "get";
+        $router->set_method($method);
+        $router->set_data($_POST);
+        $router->route(UsersController::class, $id);
         break;
     
     default:

@@ -2,7 +2,7 @@
 
 namespace Router;
 
-class RouterHandler{
+class RouteHandler{
 
     protected $method;
     protected $data;
@@ -21,17 +21,22 @@ class RouterHandler{
 
         switch ($this->method) {
             case "get":
-                if ($id && $id == "create"){
+                if ($id && $id == "signup"){
                     $resource->create();
-                } 
-                /* elseif ($id){
-                    $resource->show($id);} */
-                else {
+                } elseif ($id == "login"){
+                    require("../resources/views/login.php");
+                }elseif ($id == "logout"){
+                    require("../resources/views/logout.php");
+                } else {
                     $resource->index();
                 }
                 break;
             case "post":
-                $resource->store($this->data);
+                    $resource->store($this->data);
+                break;
+
+            case "user_post":
+                $resource->show($_POST);
                 break;
 
             // case "delete":

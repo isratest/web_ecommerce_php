@@ -7,5 +7,8 @@
 </head>
 <body>
     <h1>This is Front | Page 💎</h1>
+    <form action="http://webecommercephp.test/dashboard">
+        <button type="submit">Go to dashboard!</button>
+    </form>
 </body>
 </html>
